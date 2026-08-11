@@ -1,34 +1,363 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Lumora</title>
-    <link rel="stylesheet" href="style.css">
+
+    <title>Lumora — Contact</title>
+
+    <link rel="stylesheet" href="contact.css">
 </head>
+
 <body>
 
-<nav>
-    <h2>Lumora</h2>
+    <!-- NAVBAR -->
 
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
-</nav>
+    <header class="topbar">
 
-<section class="contact">
-    <h1>Contact Us</h1>
+        <a href="index.html" class="brand">
+            LUMORA
+        </a>
 
-    <form>
-        <input type="text" placeholder="Name">
-        <input type="email" placeholder="Email">
-        <textarea placeholder="Message"></textarea>
-        <button type="submit">Send</button>
-    </form>
-</section>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="products.html">Products</a>
+            <a href="contact.html" class="selected">Contact</a>
+        </nav>
+
+        <a href="products.html" class="shop">
+            Shop Now
+        </a>
+
+    </header>
+
+
+    <!-- PAGE -->
+
+    <main class="contact-page">
+
+
+        <!-- DECORATIVE FLOWERS -->
+
+        <div class="flower flower-left">✿</div>
+
+        <div class="flower flower-right">✿</div>
+
+        <div class="tiny-star star-one">✦</div>
+
+        <div class="tiny-star star-two">✧</div>
+
+
+
+        <!-- HERO -->
+
+        <section class="contact-hero">
+
+            <p class="hero-mini">
+                ✦ LUMORA CUSTOMER CARE ✦
+            </p>
+
+            <h1>
+                LET'S
+                <span>CONNECT.</span>
+            </h1>
+
+            <p class="hero-text">
+                got a question? a compliment?
+                a skincare emergency? ♡
+                <br>
+                we're all ears.
+            </p>
+
+        </section>
+
+
+
+        <!-- LITTLE CONTACT BUBBLES -->
+
+        <div class="contact-bubble bubble-email">
+
+            <div class="bubble-icon">♡</div>
+
+            <div>
+                <small>EMAIL</small>
+                <p>hello@lumora.com</p>
+            </div>
+
+        </div>
+
+
+        <div class="contact-bubble bubble-phone">
+
+            <div class="bubble-icon">☏</div>
+
+            <div>
+                <small>CALL US</small>
+                <p>+1 234 567 890</p>
+            </div>
+
+        </div>
+
+
+
+        <!-- MAIN FORM -->
+
+        <section class="message-area">
+
+
+            <!-- SIDE NOTE -->
+
+            <div class="side-note">
+
+                <span class="side-number">01</span>
+
+                <p>
+                    YOUR
+                    <br>
+                    MESSAGE
+                </p>
+
+                <span class="side-arrow">↓</span>
+
+            </div>
+
+
+
+            <!-- FORM CARD -->
+
+            <div class="form-card">
+
+                <div class="form-top">
+
+                    <div>
+
+                        <p class="form-eyebrow">
+                            A LITTLE NOTE
+                        </p>
+
+                        <h2>
+                            Tell us
+                            <em>everything.</em>
+                        </h2>
+
+                    </div>
+
+                    <div class="heart">
+                        ♡
+                    </div>
+
+                </div>
+
+
+                <p class="form-description">
+                    Fill in the little details below and
+                    we'll get back to you with love.
+                </p>
+
+
+
+                <form>
+
+
+                    <!-- NAME -->
+
+                    <div class="form-field">
+
+                        <label for="name">
+                            01 &nbsp; YOUR NAME
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="what should we call you?"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- EMAIL -->
+
+                    <div class="form-field">
+
+                        <label for="email">
+                            02 &nbsp; YOUR EMAIL
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="your@email.com"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- TOPIC -->
+
+                    <div class="form-field">
+
+                        <label for="topic">
+                            03 &nbsp; I'M HERE FOR
+                        </label>
+
+                        <select id="topic" required>
+
+                            <option value="" disabled selected>
+                                choose your little topic
+                            </option>
+
+                            <option>
+                                Product question
+                            </option>
+
+                            <option>
+                                Order & shipping
+                            </option>
+
+                            <option>
+                                Skincare advice
+                            </option>
+
+                            <option>
+                                Returns & refunds
+                            </option>
+
+                            <option>
+                                Just saying hello ♡
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- MESSAGE -->
+
+                    <div class="form-field">
+
+                        <label for="message">
+                            04 &nbsp; TELL US MORE
+                        </label>
+
+                        <textarea
+                            id="message"
+                            placeholder="write something lovely..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+
+                    <!-- BUTTON -->
+
+                    <button type="submit">
+
+                        <span>
+                            SEND WITH LOVE
+                        </span>
+
+                        <strong>
+                            →
+                        </strong>
+
+                    </button>
+
+
+                </form>
+
+
+                <div class="form-bottom">
+
+                    <span>✦</span>
+
+                    usually replying within 1–2 days
+
+                    <span>♡</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- BOTTOM INFORMATION -->
+
+        <section class="bottom-info">
+
+
+            <div class="bottom-title">
+
+                <span>♡</span>
+
+                OTHER WAYS
+                <em>TO FIND US</em>
+
+            </div>
+
+
+            <div class="info-item">
+
+                <div class="info-symbol">◎</div>
+
+                <div>
+                    <small>FOLLOW ALONG</small>
+                    <p>Instagram · Pinterest</p>
+                </div>
+
+            </div>
+
+
+            <div class="info-item">
+
+                <div class="info-symbol">◷</div>
+
+                <div>
+                    <small>OPENING HOURS</small>
+                    <p>Mon – Fri · 9AM – 6PM</p>
+                </div>
+
+            </div>
+
+
+            <div class="bottom-flower">
+                ✿
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div>
+            LUMORA
+            <span>✦</span>
+            PURE CARE
+        </div>
+
+        <p>
+            skincare made with a little more love.
+        </p>
+
+    </footer>
+
 
 </body>
+
 </html>
