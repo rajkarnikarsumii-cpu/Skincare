@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,26 +10,633 @@
 
     <link rel="stylesheet" href="style.css">
 
+    <!-- Google Fonts -->
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600&display=swap"
         rel="stylesheet">
+
+
+    <style>
+
+
+        .products-page {
+
+            position: relative;
+
+            padding: 70px 8%;
+
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    circle at 10% 20%,
+                    rgba(170, 225, 240, 0.35),
+                    transparent 25%
+                ),
+
+                radial-gradient(
+                    circle at 90% 70%,
+                    rgba(190, 230, 240, 0.3),
+                    transparent 25%
+                ),
+
+                #ffffff;
+        }
+
+
+        /* BACKGROUND GLOW*/
+
+        .products-page::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 300px;
+            height: 300px;
+
+            background: rgba(170, 220, 235, 0.25);
+
+            border-radius: 50%;
+
+            filter: blur(70px);
+
+            top: 100px;
+            left: -100px;
+
+            animation: moveGlow 6s infinite alternate;
+        }
+
+
+        .products-page::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 350px;
+            height: 350px;
+
+            background: rgba(150, 210, 230, 0.2);
+
+            border-radius: 50%;
+
+            filter: blur(80px);
+
+            right: -120px;
+            bottom: 50px;
+
+            animation: moveGlow 7s infinite alternate-reverse;
+        }
+
+
+        /* Move the background glow */
+
+        @keyframes moveGlow {
+
+            from {
+                transform: translate(0, 0);
+            }
+
+            to {
+                transform: translate(60px, 30px);
+            }
+
+        }
+
+
+        /* Keep page content above the glow */
+
+        .products-page > * {
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        /*PAGE HEADING*/
+
+        .products-heading {
+
+            margin-bottom: 55px;
+
+            animation: headingAppear 1s ease;
+        }
+
+
+        @keyframes headingAppear {
+
+            from {
+
+                opacity: 0;
+
+                transform: translateY(30px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform: translateY(0);
+            }
+
+        }
+
+
+        .products-heading h1 {
+
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 65px;
+
+            font-weight: 500;
+
+            color: #405b67;
+
+            margin: 15px 0;
+        }
+
+
+        /* Essentials is baby blue */
+
+        .products-heading h1 em {
+
+            color: #82bfd2;
+
+            font-style: italic;
+
+            font-weight: 500;
+        }
+
+
+        .products-heading p {
+
+            color: #788a90;
+
+            font-size: 16px;
+
+            line-height: 1.6;
+        }
+
+
+        .collection-label {
+
+            color: #78b9cc;
+
+            font-size: 12px;
+
+            letter-spacing: 4px;
+        }
+
+
+        /*PRODUCT GRID*/
+
+        .product-grid {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 30px;
+        }
+
+
+        /*PRODUCT CARD*/
+
+        .product-card {
+
+            position: relative;
+
+            display: grid;
+
+            grid-template-columns: 48% 52%;
+
+            background: rgba(255, 255, 255, 0.85);
+
+            border: 1px solid rgba(150, 210, 225, 0.25);
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 10px 30px rgba(100, 170, 190, 0.1);
+
+            backdrop-filter: blur(8px);
+
+            animation: cardAppear 0.8s ease both;
+
+            transition: 0.4s ease;
+        }
+
+
+        /* Cards appear one after another */
+
+        .product-card:nth-child(1) {
+
+            animation-delay: 0.2s;
+        }
+
+
+        .product-card:nth-child(2) {
+
+            animation-delay: 0.4s;
+        }
+
+
+        .product-card:nth-child(3) {
+
+            animation-delay: 0.6s;
+        }
+
+
+        .product-card:nth-child(4) {
+
+            animation-delay: 0.8s;
+        }
+
+
+        @keyframes cardAppear {
+
+            from {
+
+                opacity: 0;
+
+                transform: translateY(40px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform: translateY(0);
+            }
+
+        }
+
+
+        /*CARD HOVER*/
+
+        .product-card:hover {
+
+            transform: translateY(-12px);
+
+            box-shadow:
+                0 20px 50px rgba(100, 180, 205, 0.25);
+
+            border-color: rgba(130, 200, 220, 0.5);
+        }
+
+
+        /*PRODUCT IMAGE*/
+
+        .product-image {
+
+            position: relative;
+
+            min-height: 360px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(180, 230, 240, 0.5),
+                    rgba(235, 248, 250, 0.8) 60%
+                );
+        }
+
+
+        /* Product picture */
+
+        .product-image img {
+
+            position: relative;
+
+            z-index: 3;
+
+            width: 90%;
+
+            height: 90%;
+
+            object-fit: contain;
+
+            transition: 0.5s ease;
+
+            animation: floating 4s ease-in-out infinite;
+        }
+
+
+        /* Floating animation */
+
+        @keyframes floating {
+
+            0% {
+
+                transform: translateY(0);
+            }
+
+            50% {
+
+                transform: translateY(-8px);
+            }
+
+            100% {
+
+                transform: translateY(0);
+            }
+
+        }
+
+
+        /* Image becomes slightly bigger when hovered */
+
+        .product-card:hover .product-image img {
+
+            transform: scale(1.08) translateY(-5px);
+        }
+
+
+        /*PRODUCT GLOW*/
+
+        .image-glow {
+
+            position: absolute;
+
+            width: 180px;
+
+            height: 180px;
+
+            background: rgba(140, 210, 230, 0.45);
+
+            border-radius: 50%;
+
+            filter: blur(45px);
+
+            animation: productGlow 4s infinite ease-in-out;
+        }
+
+
+        @keyframes productGlow {
+
+            0% {
+
+                transform: scale(0.9);
+
+                opacity: 0.4;
+            }
+
+            50% {
+
+                transform: scale(1.2);
+
+                opacity: 0.8;
+            }
+
+            100% {
+
+                transform: scale(0.9);
+
+                opacity: 0.4;
+            }
+
+        }
+
+
+        /*PRODUCT NUMBER*/
+
+        .product-number {
+
+            position: absolute;
+
+            top: 20px;
+
+            left: 20px;
+
+            z-index: 5;
+
+            color: #76b6ca;
+
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 25px;
+
+            transition: 0.3s;
+        }
+
+
+        .product-card:hover .product-number {
+
+            transform: translateX(6px);
+        }
+
+
+        /*PRODUCT INFORMATION*/
+
+        .product-info {
+
+            padding: 35px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+        }
+
+
+        .product-type {
+
+            color: #78b9cc;
+
+            font-size: 11px;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .product-info h2 {
+
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 32px;
+
+            font-weight: 500;
+
+            color: #405b67;
+
+            margin-bottom: 15px;
+
+            transition: 0.3s;
+        }
+
+
+        /* Heading changes slightly when card is hovered */
+
+        .product-card:hover h2 {
+
+            color: #72b4c9;
+        }
+
+
+        .product-description {
+
+            color: #788a90;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+
+            margin-bottom: 25px;
+        }
+
+
+        /*PRICE AND BUTTON*/
+
+        .product-bottom {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding-top: 20px;
+
+            border-top: 1px solid #dcecf1;
+        }
+
+
+        .price {
+
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 25px;
+
+            color: #405b67;
+        }
+
+
+        .add-cart {
+
+            border: none;
+
+            background: #8bc6d9;
+
+            color: white;
+
+            padding: 12px 20px;
+
+            border-radius: 25px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+
+        .add-cart:hover {
+
+            background: #68b1c8;
+
+            transform: scale(1.08);
+
+            box-shadow:
+                0 8px 20px rgba(100, 190, 215, 0.3);
+        }
+
+
+        /*LITTLE DECORATIVE DOTS*/
+
+        .products-heading::after {
+
+            content: "✦";
+
+            position: absolute;
+
+            right: 12%;
+
+            top: 120px;
+
+            color: #9dd1df;
+
+            font-size: 22px;
+
+            animation: sparkle 2s infinite;
+        }
+
+
+        @keyframes sparkle {
+
+            0% {
+
+                opacity: 0.3;
+
+                transform: scale(0.8);
+            }
+
+            50% {
+
+                opacity: 1;
+
+                transform: scale(1.2);
+            }
+
+            100% {
+
+                opacity: 0.3;
+
+                transform: scale(0.8);
+            }
+
+        }
+
+    </style>
+
 </head>
+
 
 <body>
 
-    <!-- NAVBAR -->
+
+    <!--NAVIGATION BAR-->
+
     <header class="navbar">
 
         <div class="logo">
             LUMORA
         </div>
 
+
         <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="products.html" class="active">Products</a>
-            <a href="contact.html">Contact</a>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="products.html" class="active">
+                Products
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
         </nav>
+
 
         <button class="shop-btn">
             Shop Now
@@ -37,239 +645,650 @@
     </header>
 
 
-    <!-- PRODUCTS PAGE -->
+
+    <!--PRODUCTS PAGE-->
+
     <main class="products-page">
 
-        <!-- HEADING -->
+
+        <!-- Page heading -->
+
         <section class="products-heading">
 
             <span class="collection-label">
                 OUR COLLECTION
             </span>
 
+
             <h1>
+
                 Luxury Skincare
                 <em>Essentials</em>
+
             </h1>
 
+
             <p>
+
                 Discover products crafted to nourish,
                 hydrate and reveal your natural glow.
+
             </p>
 
         </section>
 
 
-        <!-- PRODUCTS -->
+
+        <!--PRODUCTS-->
+
         <section class="product-grid">
 
 
+
             <!-- PRODUCT 01 -->
+
             <article class="product-card">
 
-                <div class="product-number">
-                    01
-                </div>
 
                 <div class="product-image">
 
+
+                    <span class="product-number">
+                        01
+                    </span>
+
+
                     <img
-                        src="images/1 Product.png"
+                        src="images/image1.jpg"
                         alt="Hydrating Serum">
+
 
                     <div class="image-glow"></div>
 
+
                 </div>
 
+
+
                 <div class="product-info">
+
 
                     <span class="product-type">
                         HYDRATION
                     </span>
 
+
                     <h2>
                         Hydrating Serum
                     </h2>
 
+
                     <p class="product-description">
-                        A lightweight serum designed to
-                        replenish moisture and leave skin
-                        looking fresh and luminous.
+
+                        A lightweight serum designed
+                        to replenish moisture and leave
+                        skin looking fresh and luminous.
+
                     </p>
 
+
                     <div class="product-bottom">
+
 
                         <span class="price">
                             $34
                         </span>
 
+
                         <button class="add-cart">
-                            Add To Cart
-                            <span>＋</span>
+                            Add To Cart ＋
                         </button>
+
 
                     </div>
 
+
                 </div>
+
 
             </article>
 
 
+
+
             <!-- PRODUCT 02 -->
+
             <article class="product-card">
 
-                <div class="product-number">
-                    02
-                </div>
 
                 <div class="product-image">
 
+
+                    <span class="product-number">
+                        02
+                    </span>
+
+
                     <img
-                        src="images/2 product.png"
+                        src="images/image2.jpg"
                         alt="Radiance Cream">
+
 
                     <div class="image-glow"></div>
 
+
                 </div>
 
+
+
                 <div class="product-info">
+
 
                     <span class="product-type">
                         RADIANCE
                     </span>
 
+
                     <h2>
                         Radiance Cream
                     </h2>
 
+
                     <p class="product-description">
+
                         A nourishing daily cream that
                         helps restore softness and
                         natural-looking luminosity.
+
                     </p>
 
+
                     <div class="product-bottom">
+
 
                         <span class="price">
                             $42
                         </span>
 
+
                         <button class="add-cart">
-                            Add To Cart
-                            <span>＋</span>
+                            Add To Cart ＋
                         </button>
+
 
                     </div>
 
+
                 </div>
+
 
             </article>
 
 
+
+
             <!-- PRODUCT 03 -->
+
             <article class="product-card">
 
-                <div class="product-number">
-                    03
-                </div>
 
                 <div class="product-image">
 
+
+                    <span class="product-number">
+                        03
+                    </span>
+
+
                     <img
-                        src="images/3 product.png"
+                        src="images/image3.jpg"
                         alt="Glow Mist">
+
 
                     <div class="image-glow"></div>
 
+
                 </div>
 
+
+
                 <div class="product-info">
+
 
                     <span class="product-type">
                         GLOW
                     </span>
 
+
                     <h2>
                         Glow Mist
                     </h2>
 
+
                     <p class="product-description">
+
                         A refreshing facial mist created
                         to instantly revive and refresh
                         your skin throughout the day.
+
                     </p>
 
+
                     <div class="product-bottom">
+
 
                         <span class="price">
                             $29
                         </span>
 
+
                         <button class="add-cart">
-                            Add To Cart
-                            <span>＋</span>
+                            Add To Cart ＋
                         </button>
+
 
                     </div>
 
+
                 </div>
+
 
             </article>
 
 
+
+
             <!-- PRODUCT 04 -->
+
             <article class="product-card">
 
-                <div class="product-number">
-                    04
-                </div>
 
                 <div class="product-image">
 
+
+                    <span class="product-number">
+                        04
+                    </span>
+
+
                     <img
-                        src="images/4 product.png"
+                        src="images/image4.jpg"
                         alt="Night Repair Serum">
+
 
                     <div class="image-glow"></div>
 
+
                 </div>
 
+
+
                 <div class="product-info">
+
 
                     <span class="product-type">
                         REPAIR
                     </span>
 
+
                     <h2>
                         Night Repair Serum
                     </h2>
 
+
                     <p class="product-description">
+
                         A rich overnight formula created
                         to support a smooth, hydrated
                         and refreshed appearance.
+
                     </p>
 
+
                     <div class="product-bottom">
+
 
                         <span class="price">
                             $48
                         </span>
 
+
                         <button class="add-cart">
-                            Add To Cart
-                            <span>＋</span>
+                            Add To Cart ＋
                         </button>
+
 
                     </div>
 
+
                 </div>
 
-            </article>
+
+            </article> 
+
+
+            
+            <!-- PRODUCT 05 -->
+
+            <article class="product-card">
+
+
+                <div class="product-image">
+
+
+                    <span class="product-number">
+                        05
+                    </span>
+
+
+                    <img
+                        src="images/image5.jpg"
+                        alt="Hydra Glow Sunscreen">
+
+
+                    <div class="image-glow"></div>
+
+
+                </div>
+
+
+
+                <div class="product-info">
+
+
+                    <span class="product-type">
+                        GLOW
+                    </span>
+
+
+                    <h2>
+                        Hydra Glow Sunscreen    
+                    </h2>
+
+
+                    <p class="product-description">
+
+                        A lightweight, broad-spectrum sunscreen that 
+                        shields your skin from harmful UVA & UVB rays 
+                        while keeping it hydrated and glow-ready.
+                        Perfect for daily wear.
+ 
+                    </p>
+
+
+                    <div class="product-bottom">
+
+
+                        <span class="price">
+                            $34
+                        </span>
+
+
+                        <button class="add-cart">
+                            Add To Cart ＋
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </article>  
+
+
+            
+            <!-- PRODUCT 06 -->
+
+            <article class="product-card">
+
+
+                <div class="product-image">
+
+
+                    <span class="product-number">
+                        06
+                    </span>
+
+
+                    <img
+                        src="images/image6.jpg"
+                        alt="Radiance Reset Clay Mask">
+
+
+                    <div class="image-glow"></div>
+
+
+                </div>
+
+
+
+                <div class="product-info">
+
+
+                    <span class="product-type">
+                        Radiance
+                    </span>
+
+
+                    <h2>
+                        Radiance Reset Clay Mask
+                    </h2>
+
+
+                    <p class="product-description">
+                    
+                        A purifying clay mask designed to detoxify, 
+                        refine pores, and restore a radiant complexion. 
+                        Ideal for a weekly skin reset.
+ 
+                    </p>
+
+
+                    <div class="product-bottom">
+
+
+                        <span class="price">
+                            $29
+                        </span>
+
+
+                        <button class="add-cart">
+                            Add To Cart ＋
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </article>  
+
+                        <!-- PRODUCT 07 -->
+
+            <article class="product-card">
+
+
+                <div class="product-image">
+
+
+                    <span class="product-number">
+                        07
+                    </span>
+
+
+                    <img
+                        src="images/image7.jpg"
+                        alt="Purifying Gel Cleanser">
+
+
+                    <div class="image-glow"></div>
+
+
+                </div>
+
+
+
+                <div class="product-info">
+
+
+                    <span class="product-type">
+                        Purifying
+                    </span>
+
+
+                    <h2>
+                        Purifying Gel Cleanser
+                    </h2>
+
+
+                    <p class="product-description">
+                    
+                        A gentle gel cleanser that effectively removes impurities, 
+                        excess oil, and makeup without stripping the skin. 
+                        Leaves skin feeling clean and refreshed.
+ 
+                    </p>
+
+
+                    <div class="product-bottom">
+
+
+                        <span class="price">
+                            $27
+                        </span>
+
+
+                        <button class="add-cart">
+                            Add To Cart ＋
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </article>  
+
+                        <!-- PRODUCT 08-->
+
+            <article class="product-card">
+
+
+                <div class="product-image">
+
+
+                    <span class="product-number">
+                        08
+                    </span>
+
+
+                    <img
+                        src="images/image8.jpg"
+                        alt="Hydrating Essence Toner">
+
+
+                    <div class="image-glow"></div>
+
+                    
+                </div>
+
+
+
+                <div class="product-info">
+
+
+                    <span class="product-type">
+                        Hydration
+                    </span>
+
+
+                    <h2>
+                        Hydrating Essence Toner
+                    </h2>
+
+
+                    <p class="product-description">
+                    
+                        A refreshing toner infused with hydrating ingredients 
+                        to balance the skin's pH, tighten pores, and prepare 
+                        the skin for better absorption of serums and moisturizers.
+ 
+                    </p>
+
+
+                    <div class="product-bottom">
+
+
+                        <span class="price">
+                            $31
+                        </span>
+
+
+                        <button class="add-cart">
+                            Add To Cart ＋
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </article> 
+
+            
+
 
         </section>
 
+
     </main>
 
+
+
+  
+
+    <script>
+
+       
+
+        const buttons = document.querySelectorAll(".add-cart");
+
+
+        
+
+        buttons.forEach(function(button) {
+
+            button.addEventListener("click", function() {
+
+
+                /* Change the button text */
+
+                button.innerHTML = "Added ✓";
+
+
+                /* Change it back after 1 second */
+
+                setTimeout(function() {
+
+                    button.innerHTML = "Add To Cart ＋";
+
+                }, 1000);
+
+            });
+
+        });
+
+    </script>
+
+
 </body>
+
 </html>
