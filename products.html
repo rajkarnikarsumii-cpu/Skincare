@@ -9,598 +9,12 @@
     <title>Products | Lumora</title>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="products.css">
 
     <!-- Google Fonts -->
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600&display=swap"
         rel="stylesheet">
-
-
-    <style>
-
-
-        .products-page {
-
-            position: relative;
-
-            padding: 70px 8%;
-
-            overflow: hidden;
-
-            background:
-                radial-gradient(
-                    circle at 10% 20%,
-                    rgba(170, 225, 240, 0.35),
-                    transparent 25%
-                ),
-
-                radial-gradient(
-                    circle at 90% 70%,
-                    rgba(190, 230, 240, 0.3),
-                    transparent 25%
-                ),
-
-                #ffffff;
-        }
-
-
-        /* BACKGROUND GLOW*/
-
-        .products-page::before {
-
-            content: "";
-
-            position: absolute;
-
-            width: 300px;
-            height: 300px;
-
-            background: rgba(170, 220, 235, 0.25);
-
-            border-radius: 50%;
-
-            filter: blur(70px);
-
-            top: 100px;
-            left: -100px;
-
-            animation: moveGlow 6s infinite alternate;
-        }
-
-
-        .products-page::after {
-
-            content: "";
-
-            position: absolute;
-
-            width: 350px;
-            height: 350px;
-
-            background: rgba(150, 210, 230, 0.2);
-
-            border-radius: 50%;
-
-            filter: blur(80px);
-
-            right: -120px;
-            bottom: 50px;
-
-            animation: moveGlow 7s infinite alternate-reverse;
-        }
-
-
-        /* Move the background glow */
-
-        @keyframes moveGlow {
-
-            from {
-                transform: translate(0, 0);
-            }
-
-            to {
-                transform: translate(60px, 30px);
-            }
-
-        }
-
-
-        /* Keep page content above the glow */
-
-        .products-page > * {
-
-            position: relative;
-
-            z-index: 2;
-        }
-
-
-        /*PAGE HEADING*/
-
-        .products-heading {
-
-            margin-bottom: 55px;
-
-            animation: headingAppear 1s ease;
-        }
-
-
-        @keyframes headingAppear {
-
-            from {
-
-                opacity: 0;
-
-                transform: translateY(30px);
-            }
-
-            to {
-
-                opacity: 1;
-
-                transform: translateY(0);
-            }
-
-        }
-
-
-        .products-heading h1 {
-
-            font-family: "Cormorant Garamond", serif;
-
-            font-size: 65px;
-
-            font-weight: 500;
-
-            color: #405b67;
-
-            margin: 15px 0;
-        }
-
-
-        /* Essentials is baby blue */
-
-        .products-heading h1 em {
-
-            color: #82bfd2;
-
-            font-style: italic;
-
-            font-weight: 500;
-        }
-
-
-        .products-heading p {
-
-            color: #788a90;
-
-            font-size: 16px;
-
-            line-height: 1.6;
-        }
-
-
-        .collection-label {
-
-            color: #78b9cc;
-
-            font-size: 12px;
-
-            letter-spacing: 4px;
-        }
-
-
-        /*PRODUCT GRID*/
-
-        .product-grid {
-
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            gap: 30px;
-        }
-
-
-        /*PRODUCT CARD*/
-
-        .product-card {
-
-            position: relative;
-
-            display: grid;
-
-            grid-template-columns: 48% 52%;
-
-            background: rgba(255, 255, 255, 0.85);
-
-            border: 1px solid rgba(150, 210, 225, 0.25);
-
-            border-radius: 20px;
-
-            overflow: hidden;
-
-            box-shadow:
-                0 10px 30px rgba(100, 170, 190, 0.1);
-
-            backdrop-filter: blur(8px);
-
-            animation: cardAppear 0.8s ease both;
-
-            transition: 0.4s ease;
-        }
-
-
-        /* Cards appear one after another */
-
-        .product-card:nth-child(1) {
-
-            animation-delay: 0.2s;
-        }
-
-
-        .product-card:nth-child(2) {
-
-            animation-delay: 0.4s;
-        }
-
-
-        .product-card:nth-child(3) {
-
-            animation-delay: 0.6s;
-        }
-
-
-        .product-card:nth-child(4) {
-
-            animation-delay: 0.8s;
-        }
-
-
-        @keyframes cardAppear {
-
-            from {
-
-                opacity: 0;
-
-                transform: translateY(40px);
-            }
-
-            to {
-
-                opacity: 1;
-
-                transform: translateY(0);
-            }
-
-        }
-
-
-        /*CARD HOVER*/
-
-        .product-card:hover {
-
-            transform: translateY(-12px);
-
-            box-shadow:
-                0 20px 50px rgba(100, 180, 205, 0.25);
-
-            border-color: rgba(130, 200, 220, 0.5);
-        }
-
-
-        /*PRODUCT IMAGE*/
-
-        .product-image {
-
-            position: relative;
-
-            min-height: 360px;
-
-            display: flex;
-
-            justify-content: center;
-
-            align-items: center;
-
-            overflow: hidden;
-
-            background:
-                radial-gradient(
-                    circle,
-                    rgba(180, 230, 240, 0.5),
-                    rgba(235, 248, 250, 0.8) 60%
-                );
-        }
-
-
-        /* Product picture */
-
-        .product-image img {
-
-            position: relative;
-
-            z-index: 3;
-
-            width: 90%;
-
-            height: 90%;
-
-            object-fit: contain;
-
-            transition: 0.5s ease;
-
-            animation: floating 4s ease-in-out infinite;
-        }
-
-
-        /* Floating animation */
-
-        @keyframes floating {
-
-            0% {
-
-                transform: translateY(0);
-            }
-
-            50% {
-
-                transform: translateY(-8px);
-            }
-
-            100% {
-
-                transform: translateY(0);
-            }
-
-        }
-
-
-        /* Image becomes slightly bigger when hovered */
-
-        .product-card:hover .product-image img {
-
-            transform: scale(1.08) translateY(-5px);
-        }
-
-
-        /*PRODUCT GLOW*/
-
-        .image-glow {
-
-            position: absolute;
-
-            width: 180px;
-
-            height: 180px;
-
-            background: rgba(140, 210, 230, 0.45);
-
-            border-radius: 50%;
-
-            filter: blur(45px);
-
-            animation: productGlow 4s infinite ease-in-out;
-        }
-
-
-        @keyframes productGlow {
-
-            0% {
-
-                transform: scale(0.9);
-
-                opacity: 0.4;
-            }
-
-            50% {
-
-                transform: scale(1.2);
-
-                opacity: 0.8;
-            }
-
-            100% {
-
-                transform: scale(0.9);
-
-                opacity: 0.4;
-            }
-
-        }
-
-
-        /*PRODUCT NUMBER*/
-
-        .product-number {
-
-            position: absolute;
-
-            top: 20px;
-
-            left: 20px;
-
-            z-index: 5;
-
-            color: #76b6ca;
-
-            font-family: "Cormorant Garamond", serif;
-
-            font-size: 25px;
-
-            transition: 0.3s;
-        }
-
-
-        .product-card:hover .product-number {
-
-            transform: translateX(6px);
-        }
-
-
-        /*PRODUCT INFORMATION*/
-
-        .product-info {
-
-            padding: 35px;
-
-            display: flex;
-
-            flex-direction: column;
-
-            justify-content: center;
-        }
-
-
-        .product-type {
-
-            color: #78b9cc;
-
-            font-size: 11px;
-
-            letter-spacing: 3px;
-
-            margin-bottom: 10px;
-        }
-
-
-        .product-info h2 {
-
-            font-family: "Cormorant Garamond", serif;
-
-            font-size: 32px;
-
-            font-weight: 500;
-
-            color: #405b67;
-
-            margin-bottom: 15px;
-
-            transition: 0.3s;
-        }
-
-
-        /* Heading changes slightly when card is hovered */
-
-        .product-card:hover h2 {
-
-            color: #72b4c9;
-        }
-
-
-        .product-description {
-
-            color: #788a90;
-
-            font-size: 14px;
-
-            line-height: 1.7;
-
-            margin-bottom: 25px;
-        }
-
-
-        /*PRICE AND BUTTON*/
-
-        .product-bottom {
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-
-            padding-top: 20px;
-
-            border-top: 1px solid #dcecf1;
-        }
-
-
-        .price {
-
-            font-family: "Cormorant Garamond", serif;
-
-            font-size: 25px;
-
-            color: #405b67;
-        }
-
-
-        .add-cart {
-
-            border: none;
-
-            background: #8bc6d9;
-
-            color: white;
-
-            padding: 12px 20px;
-
-            border-radius: 25px;
-
-            cursor: pointer;
-
-            transition: 0.3s;
-        }
-
-
-        .add-cart:hover {
-
-            background: #68b1c8;
-
-            transform: scale(1.08);
-
-            box-shadow:
-                0 8px 20px rgba(100, 190, 215, 0.3);
-        }
-
-
-        /*LITTLE DECORATIVE DOTS*/
-
-        .products-heading::after {
-
-            content: "✦";
-
-            position: absolute;
-
-            right: 12%;
-
-            top: 120px;
-
-            color: #9dd1df;
-
-            font-size: 22px;
-
-            animation: sparkle 2s infinite;
-        }
-
-
-        @keyframes sparkle {
-
-            0% {
-
-                opacity: 0.3;
-
-                transform: scale(0.8);
-            }
-
-            50% {
-
-                opacity: 1;
-
-                transform: scale(1.2);
-            }
-
-            100% {
-
-                opacity: 0.3;
-
-                transform: scale(0.8);
-            }
-
-        }
-
-    </style>
 
 </head>
 
@@ -623,7 +37,7 @@
                 Home
             </a>
 
-            <a href="about.html">
+            <a href="Aboutus.html">
                 About
             </a>
 
@@ -698,9 +112,7 @@
                     </span>
 
 
-                    <img
-                        src="images/image1.jpg"
-                        alt="Hydrating Serum">
+                    <img src="images/image1.jpg" alt="Hydrating Serum">
 
 
                     <div class="image-glow"></div>
@@ -769,9 +181,7 @@
                     </span>
 
 
-                    <img
-                        src="images/image2.jpg"
-                        alt="Radiance Cream">
+                    <img src="images/image2.jpg" alt="Radiance Cream">
 
 
                     <div class="image-glow"></div>
@@ -840,9 +250,7 @@
                     </span>
 
 
-                    <img
-                        src="images/image3.jpg"
-                        alt="Glow Mist">
+                    <img src="images/image3.jpg" alt="Glow Mist">
 
 
                     <div class="image-glow"></div>
@@ -911,9 +319,7 @@
                     </span>
 
 
-                    <img
-                        src="images/image4.jpg"
-                        alt="Night Repair Serum">
+                    <img src="images/image4.jpg" alt="Night Repair Serum">
 
 
                     <div class="image-glow"></div>
@@ -964,10 +370,10 @@
                 </div>
 
 
-            </article> 
+            </article>
 
 
-            
+
             <!-- PRODUCT 05 -->
 
             <article class="product-card">
@@ -981,9 +387,7 @@
                     </span>
 
 
-                    <img
-                        src="images/image5.jpg"
-                        alt="Hydra Glow Sunscreen">
+                    <img src="images/image5.jpg" alt="Hydra Glow Sunscreen">
 
 
                     <div class="image-glow"></div>
@@ -1002,17 +406,17 @@
 
 
                     <h2>
-                        Hydra Glow Sunscreen    
+                        Hydra Glow Sunscreen
                     </h2>
 
 
                     <p class="product-description">
 
-                        A lightweight, broad-spectrum sunscreen that 
-                        shields your skin from harmful UVA & UVB rays 
+                        A lightweight, broad-spectrum sunscreen that
+                        shields your skin from harmful UVA & UVB rays
                         while keeping it hydrated and glow-ready.
                         Perfect for daily wear.
- 
+
                     </p>
 
 
@@ -1035,10 +439,10 @@
                 </div>
 
 
-            </article>  
+            </article>
 
 
-            
+
             <!-- PRODUCT 06 -->
 
             <article class="product-card">
@@ -1052,9 +456,7 @@
                     </span>
 
 
-                    <img
-                        src="images/image6.jpg"
-                        alt="Radiance Reset Clay Mask">
+                    <img src="images/image6.jpg" alt="Radiance Reset Clay Mask">
 
 
                     <div class="image-glow"></div>
@@ -1078,11 +480,11 @@
 
 
                     <p class="product-description">
-                    
-                        A purifying clay mask designed to detoxify, 
-                        refine pores, and restore a radiant complexion. 
+
+                        A purifying clay mask designed to detoxify,
+                        refine pores, and restore a radiant complexion.
                         Ideal for a weekly skin reset.
- 
+
                     </p>
 
 
@@ -1105,9 +507,9 @@
                 </div>
 
 
-            </article>  
+            </article>
 
-                        <!-- PRODUCT 07 -->
+            <!-- PRODUCT 07 -->
 
             <article class="product-card">
 
@@ -1120,9 +522,7 @@
                     </span>
 
 
-                    <img
-                        src="images/image7.jpg"
-                        alt="Purifying Gel Cleanser">
+                    <img src="images/image7.jpg" alt="Purifying Gel Cleanser">
 
 
                     <div class="image-glow"></div>
@@ -1146,11 +546,11 @@
 
 
                     <p class="product-description">
-                    
-                        A gentle gel cleanser that effectively removes impurities, 
-                        excess oil, and makeup without stripping the skin. 
+
+                        A gentle gel cleanser that effectively removes impurities,
+                        excess oil, and makeup without stripping the skin.
                         Leaves skin feeling clean and refreshed.
- 
+
                     </p>
 
 
@@ -1173,9 +573,9 @@
                 </div>
 
 
-            </article>  
+            </article>
 
-                        <!-- PRODUCT 08-->
+            <!-- PRODUCT 08-->
 
             <article class="product-card">
 
@@ -1188,14 +588,12 @@
                     </span>
 
 
-                    <img
-                        src="images/image8.jpg"
-                        alt="Hydrating Essence Toner">
+                    <img src="images/image8.jpg" alt="Hydrating Essence Toner">
 
 
                     <div class="image-glow"></div>
 
-                    
+
                 </div>
 
 
@@ -1214,11 +612,11 @@
 
 
                     <p class="product-description">
-                    
-                        A refreshing toner infused with hydrating ingredients 
-                        to balance the skin's pH, tighten pores, and prepare 
+
+                        A refreshing toner infused with hydrating ingredients
+                        to balance the skin's pH, tighten pores, and prepare
                         the skin for better absorption of serums and moisturizers.
- 
+
                     </p>
 
 
@@ -1241,9 +639,9 @@
                 </div>
 
 
-            </article> 
+            </article>
 
-            
+
 
 
         </section>
@@ -1251,32 +649,16 @@
 
     </main>
 
-
-
-  
-
     <script>
-
-       
-
         const buttons = document.querySelectorAll(".add-cart");
 
+        buttons.forEach(function (button) {
 
-        
-
-        buttons.forEach(function(button) {
-
-            button.addEventListener("click", function() {
-
-
-                /* Change the button text */
+            button.addEventListener("click", function () {
 
                 button.innerHTML = "Added ✓";
 
-
-                /* Change it back after 1 second */
-
-                setTimeout(function() {
+                setTimeout(function () {
 
                     button.innerHTML = "Add To Cart ＋";
 
@@ -1285,7 +667,6 @@
             });
 
         });
-
     </script>
 
 
