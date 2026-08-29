@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Product | Lumora</title>
+
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Outfit:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+
+    <!-- Icons -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <link rel="stylesheet" href="pt.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         BACKGROUND
+    ========================= -->
+
+    <div class="glow glow-one"></div>
+
+    <div class="glow glow-two"></div>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            LUMORA
+        </div>
+
+
+        <nav>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="Aboutus.html">
+                About
+            </a>
+
+            <a href="products.html" class="active">
+                Products
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+
+        <div class="nav-right">
+
+            <button class="cart-icon">
+
+                <i class="fa-solid fa-bag-shopping"></i>
+
+                <span id="cartCount">
+                    0
+                </span>
+
+            </button>
+
+
+
+
+            <button class="shop-button"
+                onclick="window.location.href='products.html'">
+
+                Back to Products
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         PRODUCT PAGE
+    ========================= -->
+
+    <main class="product-page">
+
+
+        <!-- BACK BUTTON -->
+
+        <a href="products.html"
+            class="back-link">
+
+            ← Back to collection
+
+        </a>
+
+
+        <section class="product-detail">
+
+
+            <!-- =========================
+                 IMAGE AREA
+            ========================= -->
+
+            <div class="product-gallery">
+
+
+                <div class="gallery-image">
+
+                    <img id="productImage"
+                        src=""
+                        alt="Product">
+
+
+
+                    
+
+
+                    <div class="gallery-dots">
+
+                        <span
+                            class="gallery-dot active"
+                            id="dot1">
+                        </span>
+
+                        <span
+                            class="gallery-dot"
+                            id="dot2">
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Thumbnail previews -->
+
+                <div class="thumbnails">
+
+                    <button class="thumbnail active"
+                        id="thumbnail1">
+
+                        <img src="images/hydratingserum.jpeg"
+                            alt="Product image 1">
+
+                    </button>
+
+
+               
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 PRODUCT INFORMATION
+            ========================= -->
+
+            <div class="product-information">
+
+
+                <p class="product-type"
+                    id="productType">
+
+                    HYDRATION
+
+                </p>
+
+
+                <h1 id="productName">
+                    Hydrating Serum
+                </h1>
+
+
+                <div class="little-line"></div>
+
+
+                <p class="product-price"
+                    id="productPrice">
+
+                    $34
+
+                </p>
+
+
+                <p class="product-description"
+                    id="productDescription">
+
+                </p>
+
+
+                <!-- BENEFITS -->
+
+                <div class="benefits-section">
+
+                    <h3>
+                        Why you'll love it
+                    </h3>
+
+                    <div id="benefits"
+                        class="benefits">
+                    </div>
+
+                </div>
+
+
+                <!-- INGREDIENTS -->
+
+                <div class="ingredients-section">
+
+                    <h3>
+                        Key Ingredients
+                    </h3>
+
+                    <div id="ingredients"
+                        class="ingredients">
+                    </div>
+
+                </div>
+
+
+                <!-- QUANTITY -->
+
+                <div class="purchase-area">
+
+
+                    <div class="quantity">
+
+                        <button id="minus">
+                            −
+                        </button>
+
+                        <span id="quantity">
+                            1
+                        </span>
+
+                        <button id="plus">
+                            +
+                        </button>
+
+                    </div>
+
+
+                    <button
+                        class="add-cart"
+                        id="addCart">
+
+                        Add to Cart
+
+                    </button>
+
+                </div>
+
+
+                <p class="shipping-note">
+
+                    <i class="fa-solid fa-truck"></i>
+
+                    Free shipping on orders over $75
+
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="pt.js"></script>
+
+</body>
+
+</html>

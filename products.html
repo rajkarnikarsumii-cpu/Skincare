@@ -2,27 +2,33 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Products | Lumora</title>
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="products.css">
-
     <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600&display=swap"
-        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="products.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
+    <!-- Background glow -->
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
 
-    <!--NAVIGATION BAR-->
+
+    <!-- ================= HEADER ================= -->
 
     <header class="navbar">
 
@@ -30,646 +36,1000 @@
             LUMORA
         </div>
 
-
         <nav>
-
-            <a href="index.html">
-                Home
-            </a>
-
-            <a href="Aboutus.html">
-                About
-            </a>
-
-            <a href="products.html" class="active">
-                Products
-            </a>
-
-            <a href="contact.html">
-                Contact
-            </a>
-
+            <a href="index.html">Home</a>
+            <a href="Aboutus.html">About</a>
+            <a href="products.html">Products</a>
+            <a href="contact.html">Contact</a>
         </nav>
 
+        <div class="nav-right">
 
-        <button class="shop-btn">
-            Shop Now
-        </button>
+            <button class="cart-icon">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span id="cartCount">0</span>
+            </button>
+
+            <i class="fa-regular fa-user user-icon"></i>
+
+            <button class="shop-button">
+                Shop Now
+            </button>
+
+        </div>
 
     </header>
 
 
+    <!-- ================= MAIN ================= -->
 
-    <!--PRODUCTS PAGE-->
+    <main>
 
-    <main class="products-page">
+        <!-- HERO -->
 
+        <section class="products-hero">
 
-        <!-- Page heading -->
-
-        <section class="products-heading">
-
-            <span class="collection-label">
-                OUR COLLECTION
-            </span>
-
+            <p class="small-title">OUR COLLECTION</p>
 
             <h1>
-
                 Luxury Skincare
-                <em>Essentials</em>
-
+                <span>Essentials</span>
             </h1>
 
-
-            <p>
-
-                Discover products crafted to nourish,
-                hydrate and reveal your natural glow.
-
+            <p class="hero-text">
+                Discover products crafted to nourish, hydrate and reveal
+                your natural glow. Thoughtfully formulated skincare inspired
+                by the beauty of simplicity.
             </p>
 
         </section>
 
 
+        <!-- ================= CATEGORY BUTTONS ================= -->
 
-        <!--PRODUCTS-->
+        <div class="categories">
 
-        <section class="product-grid">
+            <button class="category active" data-category="all">
+                All Products
+            </button>
+
+            <button class="category" data-category="serums">
+                Serums
+            </button>
+
+            <button class="category" data-category="cleansers">
+                Cleansers
+            </button>
+
+            <button class="category" data-category="creams">
+                Creams
+            </button>
+
+            <button class="category" data-category="mists">
+                Mists
+            </button>
+
+            <button class="category" data-category="sunscreen">
+                Sunscreen
+            </button>
+
+            <button class="category" data-category="masks">
+                Masks
+            </button>
+
+        </div>
 
 
+        <!-- ================= PRODUCTS ================= -->
 
-            <!-- PRODUCT 01 -->
+        <section class="collection">
 
-            <article class="product-card">
+            <div class="collection-heading">
 
-
-                <div class="product-image">
-
-
-                    <span class="product-number">
-                        01
-                    </span>
-
-
-                    <img src="images/image1.jpg" alt="Hydrating Serum">
-
-
-                    <div class="image-glow"></div>
-
-
+                <div>
+                    <p class="section-number">01 — OUR COLLECTION</p>
+                    <h2>Hydration, glow & nourishment</h2>
                 </div>
 
+                <button class="view-all">
+                    View all <span>→</span>
+                </button>
+
+            </div>
 
 
-                <div class="product-info">
+            <div class="product-grid">
 
 
-                    <span class="product-type">
-                        HYDRATION
-                    </span>
+                <!-- ================= SERUMS ================= -->
 
+                <!-- 1 -->
+                <div class="product-card"
+                    data-category="serums"
+                    data-name="Hydrating Serum"
+                    data-price="$34"
+                    data-image="images/hydratingserum.jpeg">
 
-                    <h2>
-                        Hydrating Serum
-                    </h2>
+                    <div class="product-image">
 
+                        <img src="images/hydratingserum.jpeg" alt="Hydrating Serum">
 
-                    <p class="product-description">
-
-                        A lightweight serum designed
-                        to replenish moisture and leave
-                        skin looking fresh and luminous.
-
-                    </p>
-
-
-                    <div class="product-bottom">
-
-
-                        <span class="price">
-                            $34
-                        </span>
-
-
-                        <button class="add-cart">
-                            Add To Cart ＋
-                        </button>
-
+                        <button class="heart">♡</button>
 
                     </div>
 
+                    <div class="product-info">
 
-                </div>
+                        <p>HYDRATION</p>
 
-
-            </article>
-
-
-
-
-            <!-- PRODUCT 02 -->
-
-            <article class="product-card">
-
-
-                <div class="product-image">
-
-
-                    <span class="product-number">
-                        02
-                    </span>
-
-
-                    <img src="images/image2.jpg" alt="Radiance Cream">
-
-
-                    <div class="image-glow"></div>
-
-
-                </div>
-
-
-
-                <div class="product-info">
-
-
-                    <span class="product-type">
-                        RADIANCE
-                    </span>
-
-
-                    <h2>
-                        Radiance Cream
-                    </h2>
-
-
-                    <p class="product-description">
-
-                        A nourishing daily cream that
-                        helps restore softness and
-                        natural-looking luminosity.
-
-                    </p>
-
-
-                    <div class="product-bottom">
-
-
-                        <span class="price">
-                            $42
-                        </span>
-
-
-                        <button class="add-cart">
-                            Add To Cart ＋
-                        </button>
-
+                        <div class="product-name-price">
+                            <h3>Hydrating Serum</h3>
+                            <span>$34</span>
+                        </div>
 
                     </div>
 
-
                 </div>
 
 
-            </article>
+                <!-- 2 -->
+                <div class="product-card"
+                    data-category="serums"
+                    data-name="Radiance Serum"
+                    data-price="$38"
+                    data-image="images/radianceserum.jpeg">
 
+                    <div class="product-image">
 
+                        <img src="images/radianceserum.jpeg" alt="Radiance Serum">
 
-
-            <!-- PRODUCT 03 -->
-
-            <article class="product-card">
-
-
-                <div class="product-image">
-
-
-                    <span class="product-number">
-                        03
-                    </span>
-
-
-                    <img src="images/image3.jpg" alt="Glow Mist">
-
-
-                    <div class="image-glow"></div>
-
-
-                </div>
-
-
-
-                <div class="product-info">
-
-
-                    <span class="product-type">
-                        GLOW
-                    </span>
-
-
-                    <h2>
-                        Glow Mist
-                    </h2>
-
-
-                    <p class="product-description">
-
-                        A refreshing facial mist created
-                        to instantly revive and refresh
-                        your skin throughout the day.
-
-                    </p>
-
-
-                    <div class="product-bottom">
-
-
-                        <span class="price">
-                            $29
-                        </span>
-
-
-                        <button class="add-cart">
-                            Add To Cart ＋
-                        </button>
-
+                        <button class="heart">♡</button>
 
                     </div>
 
+                    <div class="product-info">
 
-                </div>
+                        <p>RADIANCE</p>
 
-
-            </article>
-
-
-
-
-            <!-- PRODUCT 04 -->
-
-            <article class="product-card">
-
-
-                <div class="product-image">
-
-
-                    <span class="product-number">
-                        04
-                    </span>
-
-
-                    <img src="images/image4.jpg" alt="Night Repair Serum">
-
-
-                    <div class="image-glow"></div>
-
-
-                </div>
-
-
-
-                <div class="product-info">
-
-
-                    <span class="product-type">
-                        REPAIR
-                    </span>
-
-
-                    <h2>
-                        Night Repair Serum
-                    </h2>
-
-
-                    <p class="product-description">
-
-                        A rich overnight formula created
-                        to support a smooth, hydrated
-                        and refreshed appearance.
-
-                    </p>
-
-
-                    <div class="product-bottom">
-
-
-                        <span class="price">
-                            $48
-                        </span>
-
-
-                        <button class="add-cart">
-                            Add To Cart ＋
-                        </button>
-
+                        <div class="product-name-price">
+                            <h3>Radiance Serum</h3>
+                            <span>$38</span>
+                        </div>
 
                     </div>
 
-
                 </div>
 
 
-            </article>
+                <!-- 3 -->
+                <div class="product-card"
+                    data-category="serums"
+                    data-name="Dewy Glow Serum"
+                    data-price="$42"
+                    data-image="images/dewyglowserum.jpeg">
 
+                    <div class="product-image">
 
+                        <img src="images/dewyserum.jpeg" alt="Dewy Glow Serum">
 
-            <!-- PRODUCT 05 -->
-
-            <article class="product-card">
-
-
-                <div class="product-image">
-
-
-                    <span class="product-number">
-                        05
-                    </span>
-
-
-                    <img src="images/image5.jpg" alt="Hydra Glow Sunscreen">
-
-
-                    <div class="image-glow"></div>
-
-
-                </div>
-
-
-
-                <div class="product-info">
-
-
-                    <span class="product-type">
-                        GLOW
-                    </span>
-
-
-                    <h2>
-                        Hydra Glow Sunscreen
-                    </h2>
-
-
-                    <p class="product-description">
-
-                        A lightweight, broad-spectrum sunscreen that
-                        shields your skin from harmful UVA & UVB rays
-                        while keeping it hydrated and glow-ready.
-                        Perfect for daily wear.
-
-                    </p>
-
-
-                    <div class="product-bottom">
-
-
-                        <span class="price">
-                            $34
-                        </span>
-
-
-                        <button class="add-cart">
-                            Add To Cart ＋
-                        </button>
-
+                        <button class="heart">♡</button>
 
                     </div>
 
+                    <div class="product-info">
 
-                </div>
+                        <p>GLOW</p>
 
-
-            </article>
-
-
-
-            <!-- PRODUCT 06 -->
-
-            <article class="product-card">
-
-
-                <div class="product-image">
-
-
-                    <span class="product-number">
-                        06
-                    </span>
-
-
-                    <img src="images/image6.jpg" alt="Radiance Reset Clay Mask">
-
-
-                    <div class="image-glow"></div>
-
-
-                </div>
-
-
-
-                <div class="product-info">
-
-
-                    <span class="product-type">
-                        Radiance
-                    </span>
-
-
-                    <h2>
-                        Radiance Reset Clay Mask
-                    </h2>
-
-
-                    <p class="product-description">
-
-                        A purifying clay mask designed to detoxify,
-                        refine pores, and restore a radiant complexion.
-                        Ideal for a weekly skin reset.
-
-                    </p>
-
-
-                    <div class="product-bottom">
-
-
-                        <span class="price">
-                            $29
-                        </span>
-
-
-                        <button class="add-cart">
-                            Add To Cart ＋
-                        </button>
-
+                        <div class="product-name-price">
+                            <h3>Dewy Glow Serum</h3>
+                            <span>$42</span>
+                        </div>
 
                     </div>
 
-
                 </div>
 
 
-            </article>
+                <!-- 4 -->
+                <div class="product-card"
+                    data-category="serums"
+                    data-name="Calm Barrier Serum"
+                    data-price="$36"
+                    data-image="images/calmbarrierserum.jpeg">
 
-            <!-- PRODUCT 07 -->
+                    <div class="product-image">
 
-            <article class="product-card">
+                        <img src="images/calmserum.jpeg" alt="Calm Barrier Serum">
 
-
-                <div class="product-image">
-
-
-                    <span class="product-number">
-                        07
-                    </span>
-
-
-                    <img src="images/image7.jpg" alt="Purifying Gel Cleanser">
-
-
-                    <div class="image-glow"></div>
-
-
-                </div>
-
-
-
-                <div class="product-info">
-
-
-                    <span class="product-type">
-                        Purifying
-                    </span>
-
-
-                    <h2>
-                        Purifying Gel Cleanser
-                    </h2>
-
-
-                    <p class="product-description">
-
-                        A gentle gel cleanser that effectively removes impurities,
-                        excess oil, and makeup without stripping the skin.
-                        Leaves skin feeling clean and refreshed.
-
-                    </p>
-
-
-                    <div class="product-bottom">
-
-
-                        <span class="price">
-                            $27
-                        </span>
-
-
-                        <button class="add-cart">
-                            Add To Cart ＋
-                        </button>
-
+                        <button class="heart">♡</button>
 
                     </div>
 
+                    <div class="product-info">
 
-                </div>
+                        <p>CALM</p>
 
-
-            </article>
-
-            <!-- PRODUCT 08-->
-
-            <article class="product-card">
-
-
-                <div class="product-image">
-
-
-                    <span class="product-number">
-                        08
-                    </span>
-
-
-                    <img src="images/image8.jpg" alt="Hydrating Essence Toner">
-
-
-                    <div class="image-glow"></div>
-
-
-                </div>
-
-
-
-                <div class="product-info">
-
-
-                    <span class="product-type">
-                        Hydration
-                    </span>
-
-
-                    <h2>
-                        Hydrating Essence Toner
-                    </h2>
-
-
-                    <p class="product-description">
-
-                        A refreshing toner infused with hydrating ingredients
-                        to balance the skin's pH, tighten pores, and prepare
-                        the skin for better absorption of serums and moisturizers.
-
-                    </p>
-
-
-                    <div class="product-bottom">
-
-
-                        <span class="price">
-                            $31
-                        </span>
-
-
-                        <button class="add-cart">
-                            Add To Cart ＋
-                        </button>
-
+                        <div class="product-name-price">
+                            <h3>Calm Barrier Serum</h3>
+                            <span>$36</span>
+                        </div>
 
                     </div>
 
+                </div>
+
+
+                <!-- 5 -->
+                <div class="product-card"
+                    data-category="serums"
+                    data-name="Vitamin Glow Serum"
+                    data-price="$40"
+                    data-image="images/vitaminglowserum.jpeg">
+
+                    <div class="product-image">
+
+                        <img src="images/vitaminserum.jpeg" alt="Vitamin Glow Serum">
+
+                        <button class="heart">♡</button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <p>VITAMIN GLOW</p>
+
+                        <div class="product-name-price">
+                            <h3>Vitamin Glow Serum</h3>
+                            <span>$40</span>
+                        </div>
+
+                    </div>
 
                 </div>
 
 
-            </article>
+                <!-- ================= CLEANSERS ================= -->
+
+                <!-- 6 -->
+                <div class="product-card"
+                    data-category="cleansers"
+                    data-name="Cloud Cleanser"
+                    data-price="$28"
+                    data-image="images/cloudcleanser.jpeg">
+
+                    <div class="product-image">
+
+                        <img src="images/cloudcleanser.jpeg" alt="Cloud Cleanser">
+
+                        <button class="heart">♡</button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <p>GENTLE CARE</p>
+
+                        <div class="product-name-price">
+                            <h3>Cloud Cleanser</h3>
+                            <span>$28</span>
+                        </div>
+
+                    </div>
+
+                </div>
 
 
+                <!-- 7 -->
+                <div class="product-card"
+                    data-category="cleansers"
+                    data-name="Milky Face Cleanser"
+                    data-price="$30"
+                    data-image="images/milkyfacecleanser.jpeg">
 
+                    <div class="product-image">
+
+                        <img src="images/milkycleanser.jpeg" alt="Milky Face Cleanser">
+
+                        <button class="heart">♡</button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <p>BALANCE</p>
+
+                        <div class="product-name-price">
+                            <h3>Milky Face Cleanser</h3>
+                            <span>$30</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 8 -->
+                <div class="product-card"
+                    data-category="cleansers"
+                    data-name="Blueberry Foam Cleanser"
+                    data-price="$29"
+                    data-image="images/cleanser3.jpg">
+
+                    <div class="product-image">
+
+                        <img src="images/blueberrycleanser.jpeg" alt="Blueberry Foam Cleanser">
+
+                        <button class="heart">♡</button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <p>FRESH FOAM</p>
+
+                        <div class="product-name-price">
+                            <h3>Blueberry Foam Cleanser</h3>
+                            <span>$29</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 9 -->
+                <div class="product-card"
+                    data-category="cleansers"
+                    data-name="Soft Balance Cleanser"
+                    data-price="$31"
+                    data-image="images/cleanser4.jpg">
+
+                    <div class="product-image">
+
+                        <img src="images/softcleanser.jpeg" alt="Soft Balance Cleanser">
+
+                        <button class="heart">♡</button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <p>BALANCE</p>
+
+                        <div class="product-name-price">
+                            <h3>Soft Balance Cleanser</h3>
+                            <span>$31</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 10 -->
+                <div class="product-card"
+                    data-category="cleansers"
+                    data-name="Aqua Purity Cleanser"
+                    data-price="$27"
+                    data-image="images/cleanser5.jpg">
+
+                    <div class="product-image">
+
+                        <img src="images/aquacleanser.jpeg" alt="Aqua Purity Cleanser">
+
+                        <button class="heart">♡</button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <p>PURITY</p>
+
+                        <div class="product-name-price">
+                            <h3>Aqua Purity Cleanser</h3>
+                            <span>$27</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= CREAMS ================= -->
+
+                <!-- 11 -->
+                <div class="product-card"
+                    data-category="creams"
+                    data-name="Radiance Cream"
+                    data-price="$40"
+                    data-image="images/image6.jpg">
+
+                    <div class="product-image">
+
+                        <img src="images/radiancecream.jpeg" alt="Radiance Cream">
+
+                        <button class="heart">♡</button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <p>RADIANCE</p>
+
+                        <div class="product-name-price">
+                            <h3>Radiance Cream</h3>
+                            <span>$40</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 12 -->
+                <div class="product-card"
+                    data-category="creams"
+                    data-name="Cloud Moisture Cream"
+                    data-price="$39"
+                    data-image="images/cream2.jpg">
+
+                    <div class="product-image">
+
+                        <img src="images/cloudcream.jpeg" alt="Cloud Moisture Cream">
+
+                        <button class="heart">♡</button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <p>MOISTURE</p>
+
+                        <div class="product-name-price">
+                            <h3>Cloud Moisture Cream</h3>
+                            <span>$39</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 13 -->
+                <div class="product-card"
+                    data-category="creams"
+                    data-name="Dewy Barrier Cream"
+                    data-price="$44"
+                    data-image="images/cream3.jpg">
+
+                    <div class="product-image">
+
+                        <img src="images/dewycream.jpeg" alt="Dewy Barrier Cream">
+
+                        <button class="heart">♡</button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <p>DEWY SKIN</p>
+
+                        <div class="product-name-price">
+                            <h3>Dewy Barrier Cream</h3>
+                            <span>$44</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 14 -->
+                <div class="product-card"
+                    data-category="creams"
+                    data-name="Silky Night Cream"
+                    data-price="$45"
+                    data-image="images/cream4.jpg">
+
+                    <div class="product-image">
+
+                        <img src="images/silkycream.jpeg" alt="Silky Night Cream">
+
+                        <button class="heart">♡</button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <p>NIGHT CARE</p>
+
+                        <div class="product-name-price">
+                            <h3>Silky Night Cream</h3>
+                            <span>$45</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 15 -->
+                <div class="product-card"
+                    data-category="creams"
+                    data-name="Aqua Glow Cream"
+                    data-price="$41"
+                    data-image="images/cream5.jpg">
+
+                    <div class="product-image">
+
+                        <img src="images/aquacream.jpeg" alt="Aqua Glow Cream">
+
+                        <button class="heart">♡</button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <p>AQUA GLOW</p>
+
+                        <div class="product-name-price">
+                            <h3>Aqua Glow Cream</h3>
+                            <span>$41</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= MISTS ================= -->
+
+                <!-- 16 -->
+                <div class="product-card"
+                    data-category="mists"
+                    data-name="Glow Mist"
+                    data-price="$26"
+                    data-image="images/glowmist.jpeg">
+
+                    <div class="product-image">
+
+                        <img src="images/glowmist.jpeg" alt="Glow Mist">
+
+                        <button class="heart">♡</button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <p>FRESH GLOW</p>
+
+                        <div class="product-name-price">
+                            <h3>Glow Mist</h3>
+                            <span>$26</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 17 -->
+                <div class="product-card"
+                    data-category="mists"
+                    data-name="Hydra Cloud Mist"
+                    data-price="$25"
+                    data-image="images/hydracloudmist.jpeg">
+
+                    <div class="product-image">
+
+                        <img src="images/hydracloudmist.jpeg" alt="Hydra Cloud Mist">
+
+                        <button class="heart">♡</button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <p>HYDRATION</p>
+
+                        <div class="product-name-price">
+                            <h3>Hydra Cloud Mist</h3>
+                            <span>$25</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 18 -->
+                <div class="product-card"
+                    data-category="mists"
+                    data-name="Rose Dew Mist"
+                    data-price="$27"
+                    data-image="images/rosemist.jpeg">
+
+                    <div class="product-image">
+
+                        <img src="images/rosemist.jpeg" alt="Rose Dew Mist">
+
+                        <button class="heart">♡</button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <p>ROSE DEW</p>
+
+                        <div class="product-name-price">
+                            <h3>Rose Dew Mist</h3>
+                            <span>$27</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 19 -->
+                <div class="product-card"
+                    data-category="mists"
+                    data-name="Aqua Refresh Mist"
+                    data-price="$24"
+                    data-image="images/aquamist.jpeg">
+
+                    <div class="product-image">
+
+                        <img src="images/aquamist.jpeg" alt="Aqua Refresh Mist">
+
+                        <button class="heart">♡</button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <p>REFRESH</p>
+
+                        <div class="product-name-price">
+                            <h3>Aqua Refresh Mist</h3>
+                            <span>$24</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 20 -->
+                <div class="product-card"
+                    data-category="mists"
+                    data-name="Luminous Face Mist"
+                    data-price="$29"
+                    data-image="images/luminousmist.jpeg">
+
+                    <div class="product-image">
+
+                        <img src="images/luminousmist.jpeg" alt="Luminous Face Mist">
+
+                        <button class="heart">♡</button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <p>LUMINOUS</p>
+
+                        <div class="product-name-price">
+                            <h3>Luminous Face Mist</h3>
+                            <span>$29</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= SUNSCREEN ================= -->
+
+                <!-- 21 -->
+                <div class="product-card"
+                    data-category="sunscreen"
+                    data-name="Daily Glow Sunscreen"
+                    data-price="$32"
+                    data-image="images/dailysunscreen.jpeg">
+
+                    <div class="product-image">
+
+                        <img src="images/dailysunscreen.jpeg" alt="Daily Glow Sunscreen">
+
+                        <button class="heart">♡</button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <p>PROTECTION</p>
+
+                        <div class="product-name-price">
+                            <h3>Daily Glow Sunscreen</h3>
+                            <span>$32</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 22 -->
+                <div class="product-card"
+                    data-category="sunscreen"
+                    data-name="Cloud SPF 50"
+                    data-price="$34"
+                    data-image="images/cloudsunscreen.jpeg">
+
+                    <div class="product-image">
+
+                        <img src="images/cloudsunscreen.jpeg" alt="Cloud SPF 50">
+
+                        <button class="heart">♡</button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <p>SPF 50</p>
+
+                        <div class="product-name-price">
+                            <h3>Cloud SPF 50</h3>
+                            <span>$34</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 23 -->
+                <div class="product-card"
+                    data-category="sunscreen"
+                    data-name="Dewy Shield SPF"
+                    data-price="$36"
+                    data-image="images/dewysunscreen.jpeg">
+
+                    <div class="product-image">
+
+                        <img src="images/dewysunscreen.jpeg" alt="Dewy Shield SPF">
+
+                        <button class="heart">♡</button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <p>DEWY PROTECTION</p>
+
+                        <div class="product-name-price">
+                            <h3>Dewy Shield SPF</h3>
+                            <span>$36</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 24 -->
+                <div class="product-card"
+                    data-category="sunscreen"
+                    data-name="Aqua Sun Veil"
+                    data-price="$31"
+                    data-image="images/aquasunscreen.jpeg">
+
+                    <div class="product-image">
+
+                        <img src="images/aquasunscreen.jpeg" alt="Aqua Sun Veil">
+
+                        <button class="heart">♡</button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <p>LIGHTWEIGHT</p>
+
+                        <div class="product-name-price">
+                            <h3>Aqua Sun Veil</h3>
+                            <span>$31</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 25 -->
+                <div class="product-card"
+                    data-category="sunscreen"
+                    data-name="Radiant SPF 50"
+                    data-price="$35"
+                    data-image="images/raidiantsunscreen.jpeg">
+
+                    <div class="product-image">
+
+                        <img src="images/raidiantsunscreen.jpeg" alt="Radiant SPF 50">
+
+                        <button class="heart">♡</button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <p>RADIANT SPF</p>
+
+                        <div class="product-name-price">
+                            <h3>Radiant SPF 50</h3>
+                            <span>$35</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= MASKS ================= -->
+
+                <!-- 26 -->
+                <div class="product-card"
+                    data-category="masks"
+                    data-name="Cloud Hydration Mask"
+                    data-price="$33"
+                    data-image="images/cloudmask.jpeg">
+
+                    <div class="product-image">
+
+                        <img src="images/cloudmask.jpeg" alt="Cloud Hydration Mask">
+
+                        <button class="heart">♡</button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <p>HYDRATION</p>
+
+                        <div class="product-name-price">
+                            <h3>Cloud Hydration Mask</h3>
+                            <span>$33</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 27 -->
+                <div class="product-card"
+                    data-category="masks"
+                    data-name="Blueberry Glow Mask"
+                    data-price="$35"
+                    data-image="images/blueberrymask.jpeg">
+
+                    <div class="product-image">
+
+                        <img src="images/blueberrymask.jpeg" alt="Blueberry Glow Mask">
+
+                        <button class="heart">♡</button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <p>GLOW</p>
+
+                        <div class="product-name-price">
+                            <h3>Blueberry Glow Mask</h3>
+                            <span>$35</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 28 -->
+                <div class="product-card"
+                    data-category="masks"
+                    data-name="Calm Recovery Mask"
+                    data-price="$37"
+                    data-image="images/calmmask.jpeg">
+
+                    <div class="product-image">
+
+                        <img src="images/calmmask.jpeg" alt="Calm Recovery Mask">
+
+                        <button class="heart">♡</button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <p>CALM CARE</p>
+
+                        <div class="product-name-price">
+                            <h3>Calm Recovery Mask</h3>
+                            <span>$37</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 29 -->
+                <div class="product-card"
+                    data-category="masks"
+                    data-name="Dewy Sleep Mask"
+                    data-price="$39"
+                    data-image="images/dewymask.jpeg">
+
+                    <div class="product-image">
+
+                        <img src="images/dewymask.jpeg" alt="Dewy Sleep Mask">
+
+                        <button class="heart">♡</button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <p>OVERNIGHT GLOW</p>
+
+                        <div class="product-name-price">
+                            <h3>Dewy Sleep Mask</h3>
+                            <span>$39</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 30 -->
+                <div class="product-card"
+                    data-category="masks"
+                    data-name="Radiance Clay Mask"
+                    data-price="$36"
+                    data-image="images/radiancemasks.jpeg">
+
+                    <div class="product-image">
+
+                        <img src="images/radiancemask.jpeg" alt="Radiance Clay Mask">
+
+                        <button class="heart">♡</button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <p>RADIANCE</p>
+
+                        <div class="product-name-price">
+                            <h3>Radiance Clay Mask</h3>
+                            <span>$36</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </section>
 
-
     </main>
 
-    <script>
-        const buttons = document.querySelectorAll(".add-cart");
 
-        buttons.forEach(function (button) {
-
-            button.addEventListener("click", function () {
-
-                button.innerHTML = "Added ✓";
-
-                setTimeout(function () {
-
-                    button.innerHTML = "Add To Cart ＋";
-
-                }, 1000);
-
-            });
-
-        });
-    </script>
-
+    <script src="products.js"></script>
 
 </body>
-
 </html>
